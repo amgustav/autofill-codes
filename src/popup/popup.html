@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="popup.css">
+  <title>Autofill Codes</title>
+</head>
+<body>
+  <div class="popup">
+    <div class="header">
+      <img src="../../public/icons/icon32.png" alt="" class="logo">
+      <h1>Autofill Codes</h1>
+    </div>
+
+    <!-- Not authenticated -->
+    <div id="view-login" class="view">
+      <p class="description">
+        Connect your Gmail to automatically detect and fill verification codes.
+      </p>
+      <button id="btn-login" class="btn btn-primary">
+        Sign in with Google
+      </button>
+    </div>
+
+    <!-- Authenticated -->
+    <div id="view-main" class="view" hidden>
+      <div class="status">
+        <div class="status-dot"></div>
+        <span id="email-display" class="email"></span>
+      </div>
+
+      <div class="toggle-row">
+        <label for="toggle-enabled" class="toggle-label">Auto-detect & fill</label>
+        <label class="toggle">
+          <input type="checkbox" id="toggle-enabled" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <button id="btn-fetch" class="btn btn-secondary">
+        Fetch code now
+      </button>
+
+      <div id="code-display" class="code-display" hidden>
+        <span class="code-label">Latest code:</span>
+        <span id="code-value" class="code-value"></span>
+        <button id="btn-copy" class="btn-icon" title="Copy">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M3 11V3C3 2.44772 3.44772 2 4 2H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <hr class="divider">
+
+      <button id="btn-logout" class="btn btn-ghost">
+        Sign out
+      </button>
+    </div>
+
+    <!-- Loading -->
+    <div id="view-loading" class="view" hidden>
+      <div class="spinner"></div>
+    </div>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

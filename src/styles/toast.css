@@ -1,0 +1,42 @@
+/* Toast notifications for Autofill Codes extension */
+
+.autofill-codes-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2147483647;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #fff;
+  background: #1a1a2e;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24), 0 2px 8px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  max-width: 360px;
+}
+
+.autofill-codes-toast--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.autofill-codes-toast--success {
+  background: #0f5132;
+  border-left: 3px solid #4ade80;
+}
+
+.autofill-codes-toast--info {
+  background: #1a1a2e;
+  border-left: 3px solid #60a5fa;
+}
+
+.autofill-codes-toast--error {
+  background: #7f1d1d;
+  border-left: 3px solid #f87171;
+}
